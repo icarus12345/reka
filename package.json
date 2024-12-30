@@ -1,55 +1,441 @@
 {
   "name": "reka-ui",
   "type": "module",
-  "version": "1.0.0-alpha.7",
-  "private": true,
-  "packageManager": "pnpm@9.4.0",
+  "version": "1.0.0",
+  "description": "Vue port for Radix UI Primitives.",
+  "author": "UnoVue Contributors (https://github.com/unovue)",
   "license": "MIT",
-  "repository": "unovue/reka-ui",
-  "workspaces": [
-    "packages/*"
+  "homepage": "https://github.com/unovue/radix-vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unovue/radix-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unovue/radix-vue/issues"
+  },
+  "keywords": [
+    "ui",
+    "vue",
+    "accessibility",
+    "headless",
+    "nuxt",
+    "primitives",
+    "components",
+    "radix",
+    "unstyled"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./date": {
+      "import": {
+        "types": "./dist/date/index.d.ts",
+        "default": "./dist/date.js"
+      },
+      "require": {
+        "types": "./dist/date/index.d.ts",
+        "default": "./dist/date.cjs"
+      }
+    },
+    "./Accordion": {
+      "import": {
+        "types": "./dist/Accordion/index.d.ts",
+        "default": "./dist/Accordion.js"
+      },
+      "require": {
+        "types": "./dist/Accordion/index.d.ts",
+        "default": "./dist/Accordion.umd.cjs"
+      }
+    },
+    "./AlertDialog": {
+      "import": {
+        "types": "./dist/AlertDialog/index.d.ts",
+        "default": "./dist/AlertDialog.js"
+      },
+      "require": {
+        "types": "./dist/AlertDialog/index.d.ts",
+        "default": "./dist/AlertDialog.umd.cjs"
+      }
+    },
+    "./Combobox": {
+      "import": {
+        "types": "./dist/Combobox/index.d.ts",
+        "default": "./dist/Combobox.js"
+      },
+      "require": {
+        "types": "./dist/Combobox/index.d.ts",
+        "default": "./dist/Combobox.umd.cjs"
+      }
+    },
+    "./Calendar": {
+      "import": {
+        "types": "./dist/Calendar/index.d.ts",
+        "default": "./dist/Calendar.js"
+      },
+      "require": {
+        "types": "./dist/Calendar/index.d.ts",
+        "default": "./dist/Calendar.umd.cjs"
+      }
+    },
+    "./ContextMenu": {
+      "import": {
+        "types": "./dist/ContextMenu/index.d.ts",
+        "default": "./dist/ContextMenu.js"
+      },
+      "require": {
+        "types": "./dist/ContextMenu/index.d.ts",
+        "default": "./dist/ContextMenu.umd.cjs"
+      }
+    },
+    "./DateField": {
+      "import": {
+        "types": "./dist/DateField/index.d.ts",
+        "default": "./dist/DateField.js"
+      },
+      "require": {
+        "types": "./dist/DateField/index.d.ts",
+        "default": "./dist/DateField.umd.cjs"
+      }
+    },
+    "./DatePicker": {
+      "import": {
+        "types": "./dist/DatePicker/index.d.ts",
+        "default": "./dist/DatePicker.js"
+      },
+      "require": {
+        "types": "./dist/DatePicker/index.d.ts",
+        "default": "./dist/DatePicker.umd.cjs"
+      }
+    },
+    "./DateRangePicker": {
+      "import": {
+        "types": "./dist/DateRangePicker/index.d.ts",
+        "default": "./dist/DateRangePicker.js"
+      },
+      "require": {
+        "types": "./dist/DateRangePicker/index.d.ts",
+        "default": "./dist/DateRangePicker.umd.cjs"
+      }
+    },
+    "./DateRangeField": {
+      "import": {
+        "types": "./dist/DateRangeField/index.d.ts",
+        "default": "./dist/DateRangeField.js"
+      },
+      "require": {
+        "types": "./dist/DateRangeField/index.d.ts",
+        "default": "./dist/DateRangeField.umd.cjs"
+      }
+    },
+    "./DropdownMenu": {
+      "import": {
+        "types": "./dist/DropdownMenu/index.d.ts",
+        "default": "./dist/DropdownMenu.js"
+      },
+      "require": {
+        "types": "./dist/DropdownMenu/index.d.ts",
+        "default": "./dist/DropdownMenu.umd.cjs"
+      }
+    },
+    "./Editable": {
+      "import": {
+        "types": "./dist/Editable/index.d.ts",
+        "default": "./dist/Editable.js"
+      },
+      "require": {
+        "types": "./dist/Editable/index.d.ts",
+        "default": "./dist/Editable.umd.cjs"
+      }
+    },
+    "./HoverCard": {
+      "import": {
+        "types": "./dist/HoverCard/index.d.ts",
+        "default": "./dist/HoverCard.js"
+      },
+      "require": {
+        "types": "./dist/HoverCard/index.d.ts",
+        "default": "./dist/HoverCard.umd.cjs"
+      }
+    },
+    "./ListBox": {
+      "import": {
+        "types": "./dist/ListBox/index.d.ts",
+        "default": "./dist/ListBox.js"
+      },
+      "require": {
+        "types": "./dist/ListBox/index.d.ts",
+        "default": "./dist/ListBox.umd.cjs"
+      }
+    },
+    "./Menubar": {
+      "import": {
+        "types": "./dist/Menubar/index.d.ts",
+        "default": "./dist/Menubar.js"
+      },
+      "require": {
+        "types": "./dist/Menubar/index.d.ts",
+        "default": "./dist/Menubar.umd.cjs"
+      }
+    },
+    "./NavigationMenu": {
+      "import": {
+        "types": "./dist/NavigationMenu/index.d.ts",
+        "default": "./dist/NavigationMenu.js"
+      },
+      "require": {
+        "types": "./dist/NavigationMenu/index.d.ts",
+        "default": "./dist/NavigationMenu.umd.cjs"
+      }
+    },
+    "./NumberField": {
+      "import": {
+        "types": "./dist/NumberField/index.d.ts",
+        "default": "./dist/NumberField.js"
+      },
+      "require": {
+        "types": "./dist/NumberField/index.d.ts",
+        "default": "./dist/NumberField.umd.cjs"
+      }
+    },
+    "./RangeCalendar": {
+      "import": {
+        "types": "./dist/RangeCalendar/index.d.ts",
+        "default": "./dist/RangeCalendar.js"
+      },
+      "require": {
+        "types": "./dist/RangeCalendar/index.d.ts",
+        "default": "./dist/RangeCalendar.umd.cjs"
+      }
+    },
+    "./TimeField": {
+      "import": {
+        "types": "./dist/TimeField/index.d.ts",
+        "default": "./dist/TimeField.js"
+      },
+      "require": {
+        "types": "./dist/TimeField/index.d.ts",
+        "default": "./dist/TimeField.umd.cjs"
+      }
+    },
+    "./Pagination": {
+      "import": {
+        "types": "./dist/Pagination/index.d.ts",
+        "default": "./dist/Pagination.js"
+      },
+      "require": {
+        "types": "./dist/Pagination/index.d.ts",
+        "default": "./dist/Pagination.umd.cjs"
+      }
+    },
+    "./PinInput": {
+      "import": {
+        "types": "./dist/PinInput/index.d.ts",
+        "default": "./dist/PinInput.js"
+      },
+      "require": {
+        "types": "./dist/PinInput/index.d.ts",
+        "default": "./dist/PinInput.umd.cjs"
+      }
+    },
+    "./RadioGroup": {
+      "import": {
+        "types": "./dist/RadioGroup/index.d.ts",
+        "default": "./dist/RadioGroup.js"
+      },
+      "require": {
+        "types": "./dist/RadioGroup/index.d.ts",
+        "default": "./dist/RadioGroup.umd.cjs"
+      }
+    },
+    "./ScrollArea": {
+      "import": {
+        "types": "./dist/ScrollArea/index.d.ts",
+        "default": "./dist/ScrollArea.js"
+      },
+      "require": {
+        "types": "./dist/ScrollArea/index.d.ts",
+        "default": "./dist/ScrollArea.umd.cjs"
+      }
+    },
+    "./Select": {
+      "import": {
+        "types": "./dist/Select/index.d.ts",
+        "default": "./dist/Select.js"
+      },
+      "require": {
+        "types": "./dist/Select/index.d.ts",
+        "default": "./dist/Select.umd.cjs"
+      }
+    },
+    "./Splitter": {
+      "import": {
+        "types": "./dist/Splitter/index.d.ts",
+        "default": "./dist/Splitter.js"
+      },
+      "require": {
+        "types": "./dist/Splitter/index.d.ts",
+        "default": "./dist/Splitter.umd.cjs"
+      }
+    },
+    "./Tabs": {
+      "import": {
+        "types": "./dist/Tabs/index.d.ts",
+        "default": "./dist/Tabs.js"
+      },
+      "require": {
+        "types": "./dist/Tabs/index.d.ts",
+        "default": "./dist/Tabs.umd.cjs"
+      }
+    },
+    "./Stepper": {
+      "import": {
+        "types": "./dist/Stepper/index.d.ts",
+        "default": "./dist/Stepper.js"
+      },
+      "require": {
+        "types": "./dist/Stepper/index.d.ts",
+        "default": "./dist/Stepper.umd.cjs"
+      }
+    },
+    "./Slider": {
+      "import": {
+        "types": "./dist/Slider/index.d.ts",
+        "default": "./dist/Slider.js"
+      },
+      "require": {
+        "types": "./dist/Slider/index.d.ts",
+        "default": "./dist/Slider.umd.cjs"
+      }
+    },
+    "./TagsInput": {
+      "import": {
+        "types": "./dist/TagsInput/index.d.ts",
+        "default": "./dist/TagsInput.js"
+      },
+      "require": {
+        "types": "./dist/TagsInput/index.d.ts",
+        "default": "./dist/TagsInput.umd.cjs"
+      }
+    },
+    "./Toolbar": {
+      "import": {
+        "types": "./dist/Toolbar/index.d.ts",
+        "default": "./dist/Toolbar.js"
+      },
+      "require": {
+        "types": "./dist/Toolbar/index.d.ts",
+        "default": "./dist/Toolbar.umd.cjs"
+      }
+    },
+    "./Toggle": {
+      "import": {
+        "types": "./dist/Toggle/index.d.ts",
+        "default": "./dist/Toggle.js"
+      },
+      "require": {
+        "types": "./dist/Toggle/index.d.ts",
+        "default": "./dist/Toggle.umd.cjs"
+      }
+    },
+    "./ToggleGroup": {
+      "import": {
+        "types": "./dist/ToggleGroup/index.d.ts",
+        "default": "./dist/ToggleGroup.js"
+      },
+      "require": {
+        "types": "./dist/ToggleGroup/index.d.ts",
+        "default": "./dist/ToggleGroup.umd.cjs"
+      }
+    },
+    "./Progress": {
+      "import": {
+        "types": "./dist/Progress/index.d.ts",
+        "default": "./dist/Progress.js"
+      },
+      "require": {
+        "types": "./dist/Progress/index.d.ts",
+        "default": "./dist/Progress.umd.cjs"
+      }
+    },
+    "./Tree": {
+      "import": {
+        "types": "./dist/Tree/index.d.ts",
+        "default": "./dist/Tree.js"
+      },
+      "require": {
+        "types": "./dist/Tree/index.d.ts",
+        "default": "./dist/Tree.umd.cjs"
+      }
+    },
+    "./utilities": {
+      "import": {
+        "types": "./dist/utilities/index.d.ts",
+        "default": "./dist/utilities.js"
+      },
+      "require": {
+        "types": "./dist/utilities/index.d.ts",
+        "default": "./dist/utilities.umd.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "./LICENSE",
+    "./dist"
   ],
   "scripts": {
-    "story:dev": "pnpm --filter histoire story:dev --open",
-    "build": "rimraf packages/core/dist  && pnpm run --filter reka-ui build && pnpm run --filter plugins build",
-    "build-only": "rimraf packages/core/dist  && pnpm run -r build-only",
-    "docs:install": "pnpm --filter docs install",
-    "docs:dev": "pnpm --filter docs docs:dev",
-    "docs:build": "pnpm --filter docs docs:build",
-    "docs:gen": "pnpm --filter docs docs:gen",
-    "docs:contributors": "pnpm --filter docs docs:contributors",
-    "prepare": "pnpm simple-git-hooks",
-    "test": "pnpm --filter reka-ui test",
-    "test-update": "pnpm --filter reka-ui test-update",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "bumpp": "bumpp package.json packages/*/package.json docs/package.json",
-    "pub:release": "cd packages/core && pnpm pub:release"
+    "build": "pnpm type-check && pnpm build-only",
+    "build-only": "vite build",
+    "watch": "vite build --watch",
+    "type-check": "vue-tsc -p tsconfig.check.json --noEmit",
+    "type-gen": "vue-tsc --declaration  --emitDeclarationOnly",
+    "test": "vitest",
+    "test-update": "vitest -u",
+    "pub:release": "pnpm publish --access public"
+  },
+  "peerDependencies": {
+    "vue": ">= 3.2.0"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.11",
+    "@floating-ui/vue": "^1.1.5",
+    "@internationalized/date": "^3.5.6",
+    "@internationalized/number": "^3.5.4",
+    "@tanstack/vue-virtual": "^3.10.8",
+    "@vueuse/core": "^12.0.0",
+    "@vueuse/shared": "^12.0.0",
+    "aria-hidden": "^1.2.4",
+    "defu": "^6.1.4",
+    "ohash": "^1.1.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.27.3",
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "bumpp": "^9.4.1",
-    "eslint": "^9.11.1",
-    "lint-staged": "^15.2.10",
-    "pnpm": "^9.4.0",
-    "rimraf": "^6.0.1",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "5.3.3"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "pnpm": {
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit ${1}"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
+    "@iconify/vue": "^4.1.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/vue": "^8.1.0",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/node": "^20.14.9",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vitest/coverage-istanbul": "^2.1.1",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.5.1",
+    "jsdom": "^25.0.1",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.3",
+    "vitest": "^2.1.1",
+    "vitest-axe": "0.1.0",
+    "vitest-canvas-mock": "^0.3.3",
+    "vue": "3.5.13",
+    "vue-component-type-helpers": "^2.1.6",
+    "vue-tsc": "2.1.6"
   }
 }
